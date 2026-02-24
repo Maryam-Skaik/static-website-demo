@@ -92,6 +92,16 @@ button {
   transition: background-color 0.3s;
 }
 
+body.light-theme {
+  background: #f4f0ff;
+  color: #310131;
+}
+
+body.light-theme button {
+  background-color: #310131;
+  color: #fff;
+}
+
 button:hover {
   background-color: #8e44ad;
 }
