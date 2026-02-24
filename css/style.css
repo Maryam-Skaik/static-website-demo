@@ -1,77 +1,59 @@
 /* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
   background: linear-gradient(-45deg, #310131, #4b6c97, #6a0dad, #8e44ad);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+  color: #fff;
   transition: background 0.5s, color 0.5s;
 }
 
+/* Animated gradient background */
 @keyframes gradientBG {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
-  
-  header {
-    background-color: rgba(0,0,0,0.4);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  header h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  nav a {
-    color: #ffd700;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    flex: 1;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  section.intro h2 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-  }
-  
-  section.intro p {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.1em;
-  }
-  
-  footer {
-    background-color: rgba(0,0,0,0.4);
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
-  }
 
-  .animated-heading {
+/* Wrapper to handle vertical spacing */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* fill remaining height */
+  justify-content: center; /* center main content */
+  align-items: center;
+  text-align: center;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav a {
+  color: #ffd700;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Animated heading */
+.animated-heading {
   animation: float 3s ease-in-out infinite;
 }
 
@@ -80,8 +62,9 @@
   50% { transform: translateY(-10px); }
 }
 
-button {
-  margin-top: 20px;
+/* Theme button */
+#themeBtn {
+  margin-top: 15px;
   padding: 10px 20px;
   background-color: #6a0dad;
   border: none;
@@ -92,16 +75,45 @@ button {
   transition: background-color 0.3s;
 }
 
+#themeBtn:hover {
+  background-color: #8e44ad;
+}
+
+/* Main content */
+main {
+  flex: 1; /* fill space between header and footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;
+  padding: 20px;
+}
+
+section.intro h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+section.intro p {
+  max-width: 600px;
+  font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Light theme optional */
 body.light-theme {
   background: #f4f0ff;
   color: #310131;
 }
 
-body.light-theme button {
+body.light-theme #themeBtn {
   background-color: #310131;
   color: #fff;
-}
-
-button:hover {
-  background-color: #8e44ad;
 }
